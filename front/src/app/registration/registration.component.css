@@ -72,3 +72,10 @@ form a{
     color: #2ecc71;
     font-size: 20px;
 }
+
+.background{
+    height: 850px;
+    margin-top: -300px;
+    margin-left: 752px;
+    /* width: 800px; */
+}
