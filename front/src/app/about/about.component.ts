@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  developers: string[][];
+  constructor() {
+    this.developers = [
+      ['Issenbayev Yernur', 'ernurator'], 
+      ['Shamoi El\'vina', 'elvina_s'], 
+      ['Turdybay Akniyet', 'tuerdisan']
+    ];
+    
+  }
 
   ngOnInit(): void {
+  }
+
+  getTelegramLink(username: string): string {
+
+    return `https://t.me/${username}`
   }
 
 }

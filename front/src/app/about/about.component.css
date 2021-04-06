@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.title {
+  margin: 50px 0;
+}
+
+.text {
+  width: 80%;
+  font-size: 110%;
+  line-height: 150%;
+}
+
+.text a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.text a:hover {
+  text-decoration: underline;
+}
+
+.main-image {
+  align-self: center;
+  width: 80%;
+  margin: 50px;
+  border: 1px solid rgb(179, 179, 179);
+  box-shadow: 2px 2px 13px 5px #B5B5B5;
+}

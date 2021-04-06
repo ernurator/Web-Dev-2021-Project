@@ -1,1 +1,15 @@
-<p>about works!</p>
+<h1 class="title">Code Forum - Coding Community.</h1>
+
+<p class="text">We are the students who want to join all programmers in one forum &mdash; to discuss interesting topics.</p>
+<p class="text">This site was created as group project work on Web Development Course Spring 2021. Stack &mdash; Angular, Django and SQLite.</p>
+<p class="text">If you are interested in that site (or if you have found a bug), you can contact the developers team:</p>
+
+<ul class="text">
+  <li *ngFor="let developer of developers">
+    <a [href]="getTelegramLink(developer[1])" target="_blank">{{developer[0]}}</a>
+  </li>
+</ul>
+
+<p class="text">Hope you enjoyed the site!</p>
+
+<img src="assets/about-main.png" alt="Northern Lights" class="main-image" title="Isn't it beautiful?">

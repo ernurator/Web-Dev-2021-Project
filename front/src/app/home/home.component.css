@@ -1,0 +1,52 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.title {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin: 0;
+}
+
+button {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-family: inherit;
+  border: 0;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.new-posts-btn {
+  background: #19293a;
+  color: white;
+  padding: 5px;
+}
+
+.create-post-btn {
+  background: #1bc977;
+  color: white;
+  padding: 5px;
+}
+
+.main-image {
+  align-self: center;
+  width: 80%;
+  margin: 50px;
+  border: 1px solid rgb(179, 179, 179);
+  box-shadow: 2px 2px 13px 5px #B5B5B5;
+}
