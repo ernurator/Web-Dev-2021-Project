@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  username: string;
+  status: string;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  editUsername(){}
+  editStatus(){}
 }
