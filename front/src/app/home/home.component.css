@@ -1,6 +1,7 @@
 :host {
   display: flex;
   flex-flow: column nowrap;
+  box-sizing: border-box;
   padding: 10px;
   padding-bottom: 20px;
   margin: 0 auto;
