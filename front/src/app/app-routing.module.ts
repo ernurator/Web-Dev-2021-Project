@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegistrationComponent } from './registration/registration.component';
 
@@ -17,7 +18,7 @@ const routes: Routes = [
   // { path: 'profile', component: ProfileComponent},
   // TODO add other paths
   { path: '', redirectTo: '/home', pathMatch: 'full'},
-  // TODO { path: '**', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

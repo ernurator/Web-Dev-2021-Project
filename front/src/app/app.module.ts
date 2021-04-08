@@ -16,6 +16,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { CommentComponent } from './comment/comment.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ForumStatisticsComponent } from './forum-statistics/forum-statistics.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { CommentComponent } from './comment/comment.component';
     CreatePostComponent,
     PostComponent,
     PostDetailComponent,
-    CommentComponent
+    CommentComponent,
+    PageNotFoundComponent,
+    ForumStatisticsComponent
   ],
   imports: [
     BrowserModule,
