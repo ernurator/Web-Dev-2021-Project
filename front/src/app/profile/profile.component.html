@@ -1,11 +1,25 @@
-<p>profile works!</p>
-<div class="profile">
-    <img id = "avatar" src="../../assets/shark.gif" width="300px">
-    <h3 class="line">Username</h3>
-    <h5 class="line">About me: {{status}}</h5>
-    <ul class="btn">
-        <li><button id = "user" (click) = "editUsername()">Edit Username</button></li>
-        <li><button id = "bio" (click) = "editStatus()">Edit Bio</button></li>
-    </ul>
-    
+
+<div class="error-message" *ngIf="errorMessage">{{errorMessage}}</div>
+
+<div class="user">
+  <h1>{{username || 'No Username'}}</h1>
+  <div class="avatar">{{getLetter()}}</div>
 </div>
+
+<!-- TODO add interaction with service (and create it) -->
+<form class="profile-info">
+  <fieldset>
+    <label>Username:</label>
+    <input type="text" placeholder="Enter new username here">
+  </fieldset>
+
+  <fieldset>
+    <label>Bio:</label>
+    <textarea placeholder="Enter your bio here">{{bio || 'No bio'}}</textarea>
+  </fieldset>
+
+  <div class="form-buttons">
+    <button class="cancel" type="reset">Cancel editing</button>
+    <button class="submit" type="submit">Save</button>
+  </div>
+</form>

@@ -1,67 +1,99 @@
-.profile{
-    display: flex;
-    padding-top: 150px;
-    background-color:rgb(228, 233, 240);
-    border-width: 0.1mm 0.1mm;
-    width: 101.3%;
-    margin-left: -8px;
-    height: 210px;
-    /* margin-top: 200px; */
+:host {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin: 80px auto;
+  width: 100%;
+  max-width: 1300px;
+  box-sizing: border-box;
 }
-.line{
-    display: block;
-    /* padding-right: 80px; */
-    padding-left: 350px;
-    position: absolute;
-    color: #1BC977
-}
-#avatar{
-    border-radius: 150%;
-    width: 160px;
-    height:160px;
-    display:block;
-    padding: 20px 150px;  
 
+.user h1 {
+  text-align: center;
 }
-button{
-    width: 140px;
-    height: 30px;
-    background-color: #1BC977;
-    border: none;
-    border-radius: 15px;;
-    overflow: hidden;
-    color:whitesmoke;
-    text-transform: uppercase;
-    font-size: 11px;
 
-} 
-button:focus { outline:0; }
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  color: #1BC977;
+  background-color: #aae5fd;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  margin: 30px;
+}
 
-ul{
-    list-style-type: none;
-    /* justify-content: end; */
-    padding-left: 500px;
-    
+.profile-info {
+  flex-basis: 40%;
+  display: flex;
+  flex-flow: column nowrap
 }
-ul li{
-    padding-top: 30px;
-    
+
+.profile-info fieldset,
+.profile-info .form-buttons {
+  box-sizing: border-box;
+  border: 0;
+  width: 70%;
 }
-button:hover {
-    background: #fff;
-    box-shadow: 0px 2px 10px 5px #1BC977;
-    color: #000;
+
+.profile-info label {
+  color: #1BC977;
+  font-size: 1.5em;
+  margin: 0.83em 0;
+  font-weight: bold;
+  display: block;
 }
-button:active {
-    background:  #1BC977;
-    color: #fff;
-    box-shadow: none; 
+
+.profile-info input[type="text"],
+.profile-info textarea {
+  display: block;
+  font-family: inherit;
+  color: #1BC977;
+  font-size: 1em;
+  font-weight: 500;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 2px 5px;
+  padding-right: 2px;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 5px;
 }
-h3{
-    padding-top: 15px;
-    font-size: 30px;
+
+.profile-info textarea {
+  height: 8em;
 }
-h5{
-    padding-top: 75px;;
-    font-size: 20px;
+
+.form-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.profile-info button {
+  font-family: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #1BC977;
+  color: whitesmoke;
+  width: 130px;
+  height: 30px;
+  border: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.profile-info button:focus { 
+  outline: 0;
+}
+
+.profile-info button:hover {
+  background: white;
+  box-shadow: 0 0 10px 5px #1BC977;
+  color: inherit;
 }
