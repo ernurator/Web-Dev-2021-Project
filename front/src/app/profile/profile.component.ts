@@ -6,12 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  errorMessage: string;
   username: string;
-  status: string;
+  bio: string;
+  // TODO inject service (and create it)
   constructor() { }
 
   ngOnInit(): void {
   }
-  editUsername(){}
-  editStatus(){}
+
+  getLetter(): string {
+    return this.username?.charAt(0).toUpperCase() || '☠';
+  }
+
 }
