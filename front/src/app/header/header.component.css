@@ -9,22 +9,22 @@
 }
 .nav ul{
     display: flex;
-    
+
 }
 .nav li{
     list-style-type: none;
-    
+
 }
 
 .nav ul li a{
-    
+
     display: block;
     color: #1BC977;
     padding: 0px 10px;
     margin-top: -13px;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: Helvetica, sans-serif; 
+    font-family: Helvetica, sans-serif;
     line-height: 40px;
     font-weight: 400;
 }
@@ -41,10 +41,10 @@
     /* padding: 0px 100px; */
     position: absolute;
     /* display: block; */
-    
+
 }
 .logo{
-    position: absolute;
+    /*position: absolute;*/
     margin-top: 40px;;
     margin-left: 40px;
 
