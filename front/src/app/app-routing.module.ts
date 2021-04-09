@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegistrationComponent},
   // // ! Temporary route
-  // { path: 'profile', component: ProfileComponent},
+  { path: 'profile', component: ProfileComponent},
   // TODO add other paths
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent },
