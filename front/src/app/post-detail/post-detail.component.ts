@@ -14,6 +14,7 @@ export class PostDetailComponent implements OnInit {
   like(post: any){
     post.likes += 1;
   }
+
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const postIDFromRoute = Number(routeParams.get('id'))
