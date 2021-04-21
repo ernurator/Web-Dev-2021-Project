@@ -1,1 +1,11 @@
-<p>post works!</p>
+<div class="container">
+  <ul>
+	  <li *ngFor="let post of posts" >
+      <div class="square">
+         <div class="main-name">{{post.header}}</div>
+            <p>{{post.text}}</p>
+         <div><a [routerLink]="['/posts', post.id]" class="button">Read More</a></div>
+      </div>
+	  </li>
+	</ul>
+</div>

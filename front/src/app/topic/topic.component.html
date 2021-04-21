@@ -1,1 +1,12 @@
-<p>topic works!</p>
+<div class="content">
+  <div class="main">
+    <h2 class="page-title">Backend development</h2>
+    <button class="create-post-btn" [routerLink]="['/create-post']">
+      <span class="material-icons-outlined">post_add</span>&nbsp;<span>Create post</span>
+    </button>
+  </div>
+<!--    <img src="assets/topic.svg">-->
+  <div class="posts">
+    <app-post></app-post>
+  </div>
+</div>
