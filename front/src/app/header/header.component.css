@@ -3,9 +3,10 @@
     width: 100%;
     max-width: 1600px;
     top: 0;
+    padding-bottom: 10px;
 }
 
-  
+
 .nav{
     background-color:rgba(0, 0, 0, .8);
     height: 70px;
@@ -28,13 +29,13 @@
 }
 
 .nav ul a{
-    
+
     display: block;
     color: #1BC977;
     padding: 1em;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: Helvetica, sans-serif; 
+    font-family: Helvetica, sans-serif;
     line-height: 40px;
     font-weight: 400;
 }
@@ -45,11 +46,11 @@
     background-color: #1BC977;
 }
 .nav ul li a:active{
-    display: flex;  
+    display: flex;
     color:whitesmoke;
     box-sizing: border-box;
     background-color: #1ea868;
-} 
+}
 .nav #logo{
     float: left;
     display: flex;
@@ -60,7 +61,7 @@
 
 
 @media screen and (max-width:850px){
-    
+
     .nav ul{
         float: none;
         width: 100%;
@@ -95,5 +96,5 @@
         font-weight: bold;
 
     }
-    
+
 }
