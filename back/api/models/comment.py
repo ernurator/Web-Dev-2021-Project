@@ -1,14 +1,16 @@
 from .post import Post
-from .user import UserProfile
+# from .user import UserProfile
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
+
 
 class Comment(models.Model):
     text = models.TextField()
     date = models.DateField(default=timezone.now)
     # TODO add constraint: likes > 0
     likes = models.IntegerField(default=0)
-    author = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
 
     def to_json(self):
