@@ -1,1 +1,20 @@
-<p>post-detail works!</p>
+<div class="main">
+  <div *ngIf="post" class="content">
+    <h1>{{post.topic}}</h1>
+    <h2>{{post.header}}</h2>
+    <div class="profile-main">
+      <img src="assets/profile.svg">
+      <p class="text">{{post.text}}</p>
+      <h3>{{post.author}}</h3>
+      <p class="like">
+        <button (click)="like(post)" class="btn-like">
+          <span class="material-icons-outlined">favorite</span>&nbsp;<span>{{post.likes}}</span>
+        </button>
+      </p>
+    </div>
+    <div>
+      <p>Posted: {{post.date}}</p>
+    </div>
+    <app-comment></app-comment>
+  </div>
+</div>
