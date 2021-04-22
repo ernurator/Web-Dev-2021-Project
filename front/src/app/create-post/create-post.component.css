@@ -1,0 +1,43 @@
+.content{
+  width: 100%;
+  max-width: 1300px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px auto;
+}
+#notice-content{
+  box-sizing: border-box;
+  border: 1px solid #f9b55e;
+  border-radius: 5px;
+  width: 100%;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  color: #3f3a23;
+  background-color: #fcf8e4;
+}
+
+textarea, input{
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 13em;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+input{
+  height: 2em;
+  font-size: 25px;
+}
+button{
+  display: flex;
+  align-items: center;
+  background: #19293a;
+  color: white;
+  padding: 5px;
+  border: 0;
+  border-radius: 5px;
+  margin: auto;
+}
