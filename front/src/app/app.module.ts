@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { CommentComponent } from './comment/comment.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ForumStatisticsComponent } from './forum-statistics/forum-statistics.component';
+import { AuthInterceptor } from './auth.interceptor';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,9 +43,17 @@ import { ForumStatisticsComponent } from './forum-statistics/forum-statistics.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

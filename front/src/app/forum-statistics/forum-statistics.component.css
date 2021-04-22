@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  background: whitesmoke;
+  width: 20%;
+  border: 1px #cfcfcf solid;
+  border-radius: 5px;
+  box-shadow:  0 0 11px 5px rgb(219, 219, 219);
+  padding: 5px;
+}
+
+.header {
+  flex-basis: 100%;
+  display: flex;
+  vertical-align: baseline;
+  padding: 5px 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  border-bottom: 1px #c3c3c3 solid;
+  margin-bottom: 7px;
+}
+
+.row {
+  flex-basis: 100%;
+  padding: 5px 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.row .label {
+  color: #767676;
+}

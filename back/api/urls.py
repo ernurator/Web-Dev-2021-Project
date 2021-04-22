@@ -9,4 +9,6 @@ urlpatterns = [
     # * path('posts/<int:post_id>/', ),
     # * path('posts/<int:post_id>/comments/', ),
     # * path('forum-statistics/', ),
+    # * path('login/', ),
+    # * path('register/', ),
 ]
