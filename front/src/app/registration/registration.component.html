@@ -3,10 +3,10 @@
     <img class="picture" src="assets/registration.svg">
     <form class="box">
         <h1>Register</h1>
-        <input class="auth" type="text" name="" placeholder="Email">
-        <input class="auth" type="text" name="" placeholder="Username">
-        <input class="auth" type="password" name="" placeholder="Password">
-        <input class="submit" type="submit" name="" value="Sign Up">
+        <input class="auth" type="text" placeholder="Email" [(ngModel)]="email" name="first" >
+        <input class="auth" type="text" placeholder="Username" [(ngModel)]="username" name="second" >
+        <input class="auth" type="password" placeholder="Password" [(ngModel)]="password" name="third" >
+        <input class="submit" type="submit" name="" value="Sign Up" (click)="register()">
         <div class="registration">Already have an account? <a routerLink="/login">Log In</a></div>
     </form>
 </div>
