@@ -1,11 +1,12 @@
-.content{
+.content {
   width: 100%;
   max-width: 1300px;
   box-sizing: border-box;
   padding: 20px;
   margin: 20px auto;
 }
-#notice-content{
+
+#notice-content {
   box-sizing: border-box;
   border: 1px solid #f9b55e;
   border-radius: 5px;
@@ -18,7 +19,7 @@
   background-color: #fcf8e4;
 }
 
-textarea, input{
+textarea, input {
   display: flex;
   box-sizing: border-box;
   width: 100%;
@@ -27,11 +28,13 @@ textarea, input{
   border-radius: 5px;
   margin-bottom: 5px;
 }
-input{
+
+input {
   height: 2em;
   font-size: 25px;
 }
-button{
+
+button {
   display: flex;
   align-items: center;
   background: #19293a;

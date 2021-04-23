@@ -10,11 +10,10 @@ export class AboutComponent implements OnInit {
   developers: string[][];
   constructor() {
     this.developers = [
-      ['Issenbayev Yernur', 'ernurator'], 
-      ['Shamoi El\'vina', 'elvina_s'], 
+      ['Issenbayev Yernur', 'ernurator'],
+      ['Shamoi El\'vina', 'elvina_s'],
       ['Turdybay Akniyet', 'tuerdisan']
     ];
-    
   }
 
   ngOnInit(): void {
@@ -22,7 +21,7 @@ export class AboutComponent implements OnInit {
 
   getTelegramLink(username: string): string {
 
-    return `https://t.me/${username}`
+    return `https://t.me/${username}`;
   }
 
 }

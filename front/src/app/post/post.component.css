@@ -1,4 +1,4 @@
-.container{
+.container {
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -13,15 +13,15 @@
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 
-.square{
+.square {
   margin-bottom: 50px;
   width: 650px;
-	height: 250px;
-	background: #deeadc;
+  height: 250px;
+  background: #deeadc;
   border-radius: 5px;
   white-space: normal;
   overflow: hidden;
@@ -34,7 +34,7 @@ ul {
 
 }
 
-.main-name{
+.main-name {
   text-align: left;
   padding: 20px 0px 0px 30px;
   font-size: 28px;
@@ -48,13 +48,14 @@ p {
   color: #939393;
   line-height: 18px;
 }
-span{
+
+span {
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
   box-sizing: content-box;
   width: 650px;
-	height: 108px;
+  height: 108px;
   display: flex;
 }
 

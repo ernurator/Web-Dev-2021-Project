@@ -88,7 +88,7 @@
   overflow: hidden;
 }
 
-.profile-info button:focus { 
+.profile-info button:focus {
   outline: 0;
 }
 

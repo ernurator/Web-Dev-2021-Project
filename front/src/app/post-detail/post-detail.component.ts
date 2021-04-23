@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import { posts } from '../posts';
-import { PostsService} from "../services/posts.service";
-import { CommentsService} from "../services/comments.service";
-import { Post } from "../models/post";
+import {posts} from '../posts';
+import {PostsService} from "../services/posts.service";
+import {CommentsService} from "../services/comments.service";
+import {Post} from "../models/post";
+
 
 @Component({
   selector: 'app-post-detail',
@@ -17,7 +18,7 @@ export class PostDetailComponent implements OnInit {
               private postsService: PostsService,
               private commentService: CommentsService) { }
 
-  like(post: any){
+  like(post: any): void {
     post.likes += 1;
   }
 

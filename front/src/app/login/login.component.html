@@ -1,11 +1,11 @@
 <div class="main">
-    <img class="logo" src="assets/logo-black.jpeg">
-    <img class="picture" src="assets/login.svg">
-    <form class="box">
-        <h1>Login</h1>
-        <input class="auth" type="text" placeholder="Username" [(ngModel)]="username" name="first">
-        <input class="auth" type="password" placeholder="Password" [(ngModel)]="password" name="second">
-        <input class="submit" type="submit" value="Login" (click)="login()">
-        <div class="registration">If you don't have an account, <a routerLink="/register">Sign up</a> </div>
-    </form>
+  <img class="logo" src="assets/logo-black.jpeg">
+  <img class="picture" src="assets/login.svg">
+  <form class="box">
+    <h1>Login</h1>
+    <input class="auth" type="text" placeholder="Username" [(ngModel)]="username">
+    <input class="auth" type="password" placeholder="Password" [(ngModel)]="password">
+    <input class="submit" type="submit" value="Login" (click)="login()">
+    <div class="registration">If you don't have an account, <a routerLink="/register">Sign up</a></div>
+  </form>
 </div>

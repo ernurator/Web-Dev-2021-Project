@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -9,8 +9,10 @@ export class ProfileComponent implements OnInit {
   errorMessage: string;
   username: string;
   bio: string;
+
   // TODO inject service (and create it)
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

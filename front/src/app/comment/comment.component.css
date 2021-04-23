@@ -1,5 +1,4 @@
-
-.new_comment{
+.new_comment {
   width: 100%;
   max-width: 1300px;
   box-sizing: border-box;
@@ -7,9 +6,9 @@
   display: flex;
   margin: 20px 50px;
   margin-bottom: auto;
-
 }
-textarea{
+
+textarea {
   display: flex;
   box-sizing: border-box;
   width: 70%;
@@ -19,7 +18,8 @@ textarea{
   border-radius: 5px;
   margin-bottom: 5px;
 }
-button{
+
+button {
   display: flex;
   align-items: center;
   background: #19293a;
@@ -31,7 +31,7 @@ button{
   bottom: 0;
 }
 
-.left_comments{
+.left_comments {
   display: flex;
   box-sizing: border-box;
   border-radius: 5px;
@@ -43,49 +43,57 @@ button{
   background-color: whitesmoke;
   /*margin-bottom: 50px;*/
 }
-state{
+
+state {
   user-select: none;
   cursor: pointer;
   display: flex;
   padding-top: 30px;
   padding-right: 0px;
 }
-h3{
+
+h3 {
   margin: auto;
   font-weight: normal;
   font-size: 13px;
 }
-.content{
+
+.content {
   display: block;
   padding: 20px;
   padding-top: 30px;
 
 }
-header{
+
+header {
   display: flex;
   /*align-items: start;*/
   flex-direction: column;
   font-size: 13px;
 
 }
-#author{
+
+#author {
   color: #1BC977;
   font-size: 25px;
   font-weight: bold;
 }
-#date{
+
+#date {
   margin-top: -10px;
   display: flex;
 }
-like{
+
+like {
   cursor: pointer;
   display: flex;
   margin-top: auto;
-  padding-bottom:20px;
+  padding-bottom: 20px;
   padding-right: 20px;
   user-select: none;
 }
-#likey{
+
+#likey {
   padding-right: 5px;
 }
 

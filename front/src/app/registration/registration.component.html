@@ -1,12 +1,12 @@
 <div class="main">
-    <img class="logo" src="assets/logo-black.jpeg">
-    <img class="picture" src="assets/registration.svg">
-    <form class="box">
-        <h1>Register</h1>
-        <input class="auth" type="text" placeholder="Email" [(ngModel)]="email" name="first" >
-        <input class="auth" type="text" placeholder="Username" [(ngModel)]="username" name="second" >
-        <input class="auth" type="password" placeholder="Password" [(ngModel)]="password" name="third" >
-        <input class="submit" type="submit" name="" value="Sign Up" (click)="register()">
-        <div class="registration">Already have an account? <a routerLink="/login">Log In</a></div>
-    </form>
+  <img class="logo" src="assets/logo-black.jpeg">
+  <img class="picture" src="assets/registration.svg">
+  <form class="box">
+    <h1>Register</h1>
+    <input class="auth" type="text" placeholder="Email" [(ngModel)]="email">
+    <input class="auth" type="text" placeholder="Username" [(ngModel)]="username">
+    <input class="auth" type="password" placeholder="Password" [(ngModel)]="password">
+    <input class="submit" type="submit" value="Sign Up" (click)="register()">
+    <div class="registration">Already have an account? <a routerLink="/login">Log In</a></div>
+  </form>
 </div>
