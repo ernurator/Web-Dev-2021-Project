@@ -19,6 +19,8 @@ export class ForumStatisticsComponent implements OnInit {
   getStatistics(): void {
     this.statisticsService.getStatistics().subscribe(data => {
       this.statistics = data;
+    }, error => {
+      console.log(error);
     });
   }
 
