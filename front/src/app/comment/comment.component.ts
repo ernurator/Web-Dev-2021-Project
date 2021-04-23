@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {DatePipe} from '@angular/common';
+
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
@@ -8,7 +9,8 @@ import { DatePipe } from '@angular/common';
 })
 export class CommentComponent implements OnInit {
 
-  constructor(){}
+  constructor() {
+  }
 
 
   comments = [
@@ -45,13 +47,16 @@ export class CommentComponent implements OnInit {
       watch: true
     }
   ];
+
   ngOnInit(): void {
   }
-  getLike(id: number){
-    this.comments[id-1].likes++;
+
+  getLike(id: number) {
+    this.comments[id - 1].likes++;
   }
-  remove(id:number){
-    this.comments[id-1].watch = false;
+
+  remove(id: number) {
+    this.comments[id - 1].watch = false;
   }
 
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { posts } from "../posts";
+import {Component, OnInit} from '@angular/core';
+import {posts} from '../posts';
 
 @Component({
   selector: 'app-topic',
@@ -7,8 +7,10 @@ import { posts } from "../posts";
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
-  posts = posts
-  constructor() { }
+  posts = posts;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

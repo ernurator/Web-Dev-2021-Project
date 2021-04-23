@@ -2,7 +2,8 @@
   /*height: 100vh;*/
   justify-content: center;
 }
-.profile-main{
+
+.profile-main {
   box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid #808080;
@@ -17,7 +18,7 @@
   /*grid-row-gap: 0px;*/
 }
 
-header{
+header {
   display: flex;
   flex-direction: column;
   /*justify-content: center;*/
@@ -38,7 +39,7 @@ img {
 
 }
 
-.comment{
+.comment {
   display: flex;
   margin-left: 70px;
 }
@@ -56,7 +57,7 @@ button {
   margin-top: -5px;
 }
 
-.btn-like{
+.btn-like {
   display: flex;
   width: 70px;
   background: #1bc977;
@@ -68,13 +69,13 @@ button {
 
 }
 
-.content{
+.content {
   width: 70%;
   margin-left: 15%;
   margin-top: 5%;
 }
 
-h1{
+h1 {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size: 36px;
@@ -82,11 +83,11 @@ h1{
   text-transform: uppercase;
 }
 
-h2{
+h2 {
   text-align: center;
 }
 
-h3{
+h3 {
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -95,11 +96,12 @@ h3{
   font-size: 20px;
 }
 
-.text{
+.text {
   padding: 20px 30px;
   margin-left: 30px;
 }
-.like{
+
+.like {
   display: flex;
   flex-direction: column;
   padding: 10px 20px;

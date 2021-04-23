@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Post} from '../models/post';
 import {HttpClient} from '@angular/common/http';
@@ -8,7 +8,9 @@ import {HttpClient} from '@angular/common/http';
 })
 export class PostsService {
   BASE_URL = 'http://127.0.0.1:8000/api';
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
 
   getTopicPosts(topicId: number): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.BASE_URL}/topics/${topicId}/posts/`);
@@ -23,6 +25,6 @@ export class PostsService {
   }
 
   addPost(data: object): Observable<Post> {
-      return this.http.post<Post>(`${this.BASE_URL}/posts/`, data);
+    return this.http.post<Post>(`${this.BASE_URL}/posts/`, data);
   }
 }

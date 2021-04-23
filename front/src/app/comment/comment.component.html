@@ -1,16 +1,16 @@
-
-<div *ngFor='let comment of comments' >
+<div *ngFor='let comment of comments'>
   <div *ngIf="comment.watch">
     <div class="left_comments">
-        <header>
-          <p id="author">{{comment.author}}</p>
-          <p id="date">{{comment.date | date:'dd/MM/yyyy HH:MM:ss'}}</p>
-        </header>
-        <div class="content">
-          <h3>{{comment.text}}</h3>
-        </div>
-        <state><span (click)="remove(comment.id)" class="material-icons-outlined mode">delete</span></state>
-        <like><span id="likey" (click)="getLike(comment.id)" class="material-icons-outlined like">thumb_up</span><span>{{comment.likes}}</span></like>
+      <header>
+        <p id="author">{{comment.author}}</p>
+        <p id="date">{{comment.date | date:'dd/MM/yyyy HH:MM:ss'}}</p>
+      </header>
+      <div class="content">
+        <h3>{{comment.text}}</h3>
+      </div>
+      <state><span (click)="remove(comment.id)" class="material-icons-outlined mode">delete</span></state>
+      <like><span id="likey" (click)="getLike(comment.id)"
+                  class="material-icons-outlined like">thumb_up</span><span>{{comment.likes}}</span></like>
     </div>
   </div>
 </div>

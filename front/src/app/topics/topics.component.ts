@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-topics',
@@ -34,7 +34,9 @@ export class TopicsComponent implements OnInit {
       description: 'Everything from site-rules, announcements etc to tech-related discussions, member introductions, suggestions and site support.'
     }
   ];
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

@@ -1,19 +1,19 @@
-h2{
+h2 {
   text-align: center;
   font-size: 40px;
   margin-top: 80px;
   margin-left: 20%;
 }
 
-.posts{
+.posts {
   margin-left: 17%;
 }
 
-.content{
+.content {
   min-height: 100vh;
 }
 
-img{
+img {
   width: 20%;
   position: absolute;
   margin-top: 200px;
