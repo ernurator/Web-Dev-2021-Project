@@ -22,7 +22,7 @@ export class ForumStatisticsComponent implements OnInit {
     this.statisticsService.getStatistics().subscribe(data => {
       this.statistics = data;
     }, error => {
-      console.log(error);
+      console.error(error);
     });
   }
 
