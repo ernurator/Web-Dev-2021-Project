@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DatePipe} from '@angular/common';
+import {Comment} from '../models/comment';
+import {CommentsService} from "../services/comments.service";
 
 @Component({
   selector: 'app-comment',
@@ -9,8 +11,11 @@ import {DatePipe} from '@angular/common';
 })
 export class CommentComponent implements OnInit {
 
-  constructor() {
+  commentsList: any;
+  comment: Comment;
+  constructor(private commentService: CommentsService){
   }
+
 
 
   comments = [
@@ -58,5 +63,14 @@ export class CommentComponent implements OnInit {
   remove(id: number) {
     this.comments[id - 1].watch = false;
   }
+
+  addComment(id: number, date: object): void{
+    this.commentService.addComment(id, date).subscribe(data => {
+      this.comment = data;
+    }, error => {
+      console.log(error);
+    });
+  }
+
 
 }

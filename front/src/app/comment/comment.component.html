@@ -16,8 +16,8 @@
 </div>
 
 <div class="new_comment">
-  <textarea placeholder="Leave a comment"></textarea>
-  <button><span class="material-icons-outlined">send</span></button>
+  <textarea placeholder="Leave a comment" [(ngModel)]="comment"></textarea>
+  <button><span class="material-icons-outlined">send</span></button> <!--(click)="addComment(postId, date)" -->
 </div>
 
 
