@@ -33,5 +33,5 @@ export const posts = [
     likes: 0,
     author: 'last admin',
     topic: 'PM'
-  }
-  ]
+  },
+];

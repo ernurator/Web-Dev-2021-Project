@@ -52,8 +52,9 @@
 }
 
 .nav .logo {
+  color: #1BC977;
   float: left;
-  margin: auto 0 auto 5%;
+  margin: 7px 0 7px 5%;
   height: 80%;
 }
 
