@@ -1,3 +1,4 @@
+
 <div *ngFor='let comment of comments' >
   <div *ngIf="comment.watch">
     <div class="left_comments">
@@ -8,9 +9,7 @@
         <div class="content">
           <h3>{{comment.text}}</h3>
         </div>
-        <state>
-<!--          <span (click)="edit(comment.id)" class="material-icons-outlined mode">mode_edit</span>-->
-        <span (click)="remove(comment.id)" class="material-icons-outlined mode">delete</span></state>
+        <state><span (click)="remove(comment.id)" class="material-icons-outlined mode">delete</span></state>
         <like><span id="likey" (click)="getLike(comment.id)" class="material-icons-outlined like">thumb_up</span><span>{{comment.likes}}</span></like>
     </div>
   </div>
@@ -20,3 +19,5 @@
   <textarea placeholder="Leave a comment"></textarea>
   <button><span class="material-icons-outlined">send</span></button>
 </div>
+
+

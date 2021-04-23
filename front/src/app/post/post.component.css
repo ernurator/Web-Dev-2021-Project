@@ -23,11 +23,15 @@ ul {
 	height: 250px;
 	background: #deeadc;
   border-radius: 5px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
   box-shadow: 0px 20px 50px #d8e0cf;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
+
 }
 
 .main-name{
@@ -36,13 +40,22 @@ ul {
   font-size: 28px;
 }
 
-p{
-   text-align: justify;
-   padding-left: 30px;
-   padding-right: 30px;
-   font-size: 15px;
-   color: #939393;
-   line-height: 18px;
+p {
+  text-align: justify;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 15px;
+  color: #939393;
+  line-height: 18px;
+}
+span{
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: content-box;
+  width: 650px;
+	height: 108px;
+  display: flex;
 }
 
 

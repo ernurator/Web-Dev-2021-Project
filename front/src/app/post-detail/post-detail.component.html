@@ -2,19 +2,24 @@
   <div *ngIf="post" class="content">
     <h1>{{post.topic}}</h1>
     <h2>{{post.header}}</h2>
-    <div class="profile-main">
-      <img src="assets/profile.svg">
-      <p class="text">{{post.text}}</p>
-      <h3>{{post.author}}</h3>
-      <p class="like">
-        <button (click)="like(post)" class="btn-like">
-          <span class="material-icons-outlined">favorite</span>&nbsp;<span>{{post.likes}}</span>
-        </button>
-      </p>
-    </div>
-    <div>
-      <p>Posted: {{post.date}}</p>
-    </div>
-    <app-comment></app-comment>
   </div>
+  <div class="profile-main">
+
+    <header>
+      <img src="assets/profile.svg">
+      <h3>{{post.author}}</h3>
+    </header>
+
+    <p class="text">{{post.text}}</p>
+
+    <div class="like">
+      <p class="date">Posted: {{post.date}}</p>
+      <button (click)="like(post)" class="btn-like">
+        <span class="material-icons-outlined">favorite</span>&nbsp;<span>{{post.likes}}</span>
+      </button>
+    </div>
+  </div>
+
 </div>
+<h2 class="comment">Comments</h2>
+<app-comment></app-comment>
