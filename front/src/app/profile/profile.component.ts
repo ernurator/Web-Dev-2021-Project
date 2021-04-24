@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UsersService} from '../services/users.service';
 import {LogService} from '../services/log.service';
 import {User} from '../models/user';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -11,12 +12,12 @@ import {User} from '../models/user';
 export class ProfileComponent implements OnInit {
   errorMessage = '';
   user: User = {
-    username: 'Useruser',
+    username: 'User user',
     bio: 'some bio',
     id: 1,
   };
 
-  constructor(private usersService: UsersService, private logService: LogService) {
+  constructor(private usersService: UsersService, private logService: LogService, private route: Router) {
   }
 
   ngOnInit(): void {
@@ -33,6 +34,7 @@ export class ProfileComponent implements OnInit {
     }, error => {
       this.errorMessage = error.message;
       this.logService.error(error);
+      setTimeout( () => this.route.navigate(['/login']), 1000);
     });
   }
 

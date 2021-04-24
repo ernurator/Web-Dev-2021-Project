@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StatisticsAPI} from '../models/statistics.api';
 import {StatisticsService} from '../services/statistics.service';
+import {LogService} from '../services/log.service';
 
 @Component({
   selector: 'app-forum-statistics',
@@ -11,7 +12,7 @@ export class ForumStatisticsComponent implements OnInit {
 
   statistics: StatisticsAPI;
 
-  constructor(private statisticsService: StatisticsService) {
+  constructor(private statisticsService: StatisticsService, private logService: LogService) {
   }
 
   ngOnInit(): void {
@@ -21,9 +22,7 @@ export class ForumStatisticsComponent implements OnInit {
   getStatistics(): void {
     this.statisticsService.getStatistics().subscribe(data => {
       this.statistics = data;
-    }, error => {
-      console.error(error);
-    });
+    }, error => this.logService.error(error));
   }
 
 }

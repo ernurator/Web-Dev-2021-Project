@@ -62,6 +62,9 @@
 
 
 @media screen and (max-width: 850px) {
+  .container {
+    position: relative;
+  }
 
   .nav ul {
     float: none;

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Topic} from '../models/topic';
 import {TopicsService} from '../services/topics.service';
 import {PostsService} from '../services/posts.service';
+import {topics} from '../topics';
 
 @Component({
   selector: 'app-create-post',
@@ -17,7 +18,7 @@ export class CreatePostComponent implements OnInit {
   topics: Topic[];
 
   constructor(private topicsService: TopicsService, private postsService: PostsService) {
-    this.topics = [];
+    this.topics = topics;
   }
 
   ngOnInit(): void {
