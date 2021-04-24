@@ -3,6 +3,7 @@ import {Topic} from '../models/topic';
 import {TopicsService} from '../services/topics.service';
 import {PostsService} from '../services/posts.service';
 import {topics} from '../topics';
+import {LogService} from '../services/log.service';
 
 @Component({
   selector: 'app-create-post',
@@ -17,7 +18,9 @@ export class CreatePostComponent implements OnInit {
   selectedTopic: Topic;
   topics: Topic[];
 
-  constructor(private topicsService: TopicsService, private postsService: PostsService) {
+  constructor(private topicsService: TopicsService,
+              private postsService: PostsService,
+              private logService: LogService) {
     this.topics = topics;
   }
 
@@ -28,9 +31,7 @@ export class CreatePostComponent implements OnInit {
   getTopics(): void {
     this.topicsService.getTopics().subscribe(data => {
       this.topics = data;
-    }, error => {
-      console.error(error);
-    });
+    }, error => this.logService.error(error));
   }
 
   createPost(): void {
@@ -53,8 +54,8 @@ export class CreatePostComponent implements OnInit {
       this.postText = '';
       this.selectedTopic = undefined;
     }, error => {
+      this.logService.error(error);
       this.message = 'Some error has happened!';
-      console.error(error);
     });
   }
 }

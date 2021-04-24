@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {posts} from '../posts';
 import {Topic} from '../models/topic';
 import {Post} from '../models/post';
 import {ActivatedRoute} from '@angular/router';
 import {PostsService} from '../services/posts.service';
 import {TopicsService} from '../services/topics.service';
 import {LogService} from '../services/log.service';
+import {posts} from '../posts';
 import {topics} from '../topics';
 
 @Component({
