@@ -1,24 +1,25 @@
 <div class="error-message" *ngIf="errorMessage">{{errorMessage}}</div>
 
-<div class="user">
-  <h1>{{username || 'No Username'}}</h1>
-  <div class="avatar">{{getLetter()}}</div>
-</div>
-
-<!-- TODO add interaction with service (and create it) -->
-<form class="profile-info">
-  <fieldset>
-    <label>Username:</label>
-    <input type="text" placeholder="Enter new username here">
-  </fieldset>
-
-  <fieldset>
-    <label>Bio:</label>
-    <textarea placeholder="Enter your bio here">{{bio || 'No bio'}}</textarea>
-  </fieldset>
-
-  <div class="form-buttons">
-    <button class="cancel" type="reset">Cancel editing</button>
-    <button class="submit" type="submit">Save</button>
+<div class="content">
+  <div class="user">
+    <h1>{{user?.username || 'No Username'}}</h1>
+    <div class="avatar">{{getLetter()}}</div>
   </div>
-</form>
+
+  <form *ngIf="user" class="profile-info">
+    <fieldset>
+      <label>Username:</label>
+      <input name="username" type="text" placeholder="Enter new username here" [(ngModel)]="user.username">
+    </fieldset>
+
+    <fieldset>
+      <label>Bio:</label>
+      <textarea name="bio" placeholder="Enter your bio here" [(ngModel)]="user.bio"></textarea>
+    </fieldset>
+
+    <div class="form-buttons">
+      <button class="cancel" type="reset">Cancel editing</button>
+      <button class="submit" (click)="updateUser()">Save</button>
+    </div>
+  </form>
+</div>

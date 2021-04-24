@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
+import {PostsService} from '../services/posts.service';
+import {CommentsService} from '../services/comments.service';
+import {Post} from '../models/post';
+import {Comment} from '../models/comment';
+import {LogService} from '../services/log.service';
 import {posts} from '../posts';
-import {PostsService} from "../services/posts.service";
-import {CommentsService} from "../services/comments.service";
-import {Post} from "../models/post";
-
+import {comments} from '../comments';
 
 @Component({
   selector: 'app-post-detail',
@@ -12,39 +14,69 @@ import {Post} from "../models/post";
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
-  post: any;
-  commentsList: any;
+  post: Post = posts[0];
+  comments: Comment[];
+  newComment = '';
+
   constructor(private route: ActivatedRoute,
               private postsService: PostsService,
-              private commentService: CommentsService) { }
+              private commentService: CommentsService,
+              private logService: LogService) {
+    this.comments = comments;
+  }
 
-  like(post: any): void {
-    post.likes += 1;
+  like(): void {
+    this.post.likes += 1;
+    this.postsService.updatePost(this.post).subscribe(post => {
+      this.post = post;
+    }, error => {
+      this.logService.error(error);
+      this.post.likes -= 1;
+    });
   }
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const postIDFromRoute = Number(routeParams.get('id'));
-    this.post = posts.find(post => post.id === postIDFromRoute);
-
-    // this.getPost(this.post.id);
-    // this.getPostComments(this.post.id);
+    this.loadData();
   }
 
-  getPost(id: number): void{
+  loadData(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = +params.get('id');
+      this.getPost(id);
+      this.getPostComments(id);
+    });
+  }
+
+  getPost(id: number): void {
     this.postsService.getPost(id).subscribe(data => {
       this.post = data;
-    }, error => {
-      console.error(error);
-    });
+    }, error => this.logService.error(error));
   }
 
-  getPostComments(id: number): void{
+  getPostComments(id: number): void {
     this.commentService.getPostComments(id).subscribe(data => {
-      this.commentsList = data;
-    }, error => {
-      console.error(error);
-    });
+      // @ts-ignore
+      this.comments = data;
+    }, error => this.logService.error(error));
   }
 
+  sendComment(): void {
+    this.newComment = this.newComment.trim();
+    if (!this.newComment) {
+      return;
+    }
+    const comment = {
+      post: this.post,
+      text: this.newComment,
+      // author: , TODO add user adding
+    };
+    this.commentService.addComment(this.post.id, comment).subscribe(data => {
+      this.comments.push(data);
+      this.newComment = '';
+    }, error => this.logService.error(error));
+  }
+
+  destroy(comment: Comment): void {
+    this.comments = this.comments.filter(com => com !== comment);
+  }
 }

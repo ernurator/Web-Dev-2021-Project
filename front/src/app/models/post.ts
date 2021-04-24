@@ -5,8 +5,7 @@ export interface Post {
   id: number;
   header: string;
   text: string;
-  // TODO find date datatype
-  date: object;
+  date: Date;
   likes: number;
   author: User;
   topic: Topic;

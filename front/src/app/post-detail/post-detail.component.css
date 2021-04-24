@@ -1,5 +1,9 @@
 .main {
-  /*height: 100vh;*/
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  max-width: 1300px;
+  margin: 0 auto;
   justify-content: center;
 }
 
@@ -7,45 +11,32 @@
   box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid #808080;
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding: 20px;
   display: flex;
   background-color: white;
-  /*grid-template-columns: 1fr 2fr;*/
-  /*grid-template-rows: 5fr 1fr;*/
-  /*grid-column-gap: 20px;*/
-  /*grid-row-gap: 0px;*/
 }
 
 header {
   display: flex;
   flex-direction: column;
-  /*justify-content: center;*/
   padding: 10px;
 }
 
 img {
-  /*align-items: center;*/
-  justify-content: center;
-  font-size: 5em;
-  color: #1BC977;
   background-color: #ceeccc;
   border-radius: 50%;
   width: 160px;
   height: 160px;
   margin-left: 10%;
-  display: flex;
-
 }
 
 .comment {
-  display: flex;
-  margin-left: 70px;
+  width: fit-content;
 }
 
 button {
-  margin-left: 85%;
   align-content: center;
   align-self: center;
   display: inline-flex;
@@ -54,7 +45,7 @@ button {
   font-family: inherit;
   border: 0;
   border-radius: 5px;
-  margin-top: -5px;
+  cursor: pointer;
 }
 
 .btn-like {
@@ -83,7 +74,7 @@ h1 {
   text-transform: uppercase;
 }
 
-h2 {
+.post-header {
   text-align: center;
 }
 
@@ -105,4 +96,20 @@ h3 {
   display: flex;
   flex-direction: column;
   padding: 10px 20px;
+}
+
+.new-comment {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 10px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.new-comment textarea {
+  width: 100%;
+  max-width: 100%;
+  font-family: inherit;
+  padding: 5px 10px;
 }

@@ -13,8 +13,12 @@ export class UsersService {
   constructor(private http: HttpClient) {
   }
 
-  getProfile(id: number): Observable<User> {
-    return this.http.get<User>(`${this.BASE_URL}/profile/${id}/`);
+  getProfile(): Observable<User> {
+    return this.http.get<User>(`${this.BASE_URL}/profile/`);
+  }
+
+  updateUser(user: User): Observable<User> {
+    return this.http.put<User>(`${this.BASE_URL}/profile/`, user);
   }
 
   login(username: string, password: string): Observable<AuthToken> {
@@ -24,9 +28,11 @@ export class UsersService {
     });
   }
 
-  // TODO add registration
   register(username: string, password: string, email: string): Observable<AuthToken> {
-    throw new Error('Not implemented');
-    // return this.http.post<AuthToken>()
+    return this.http.post<AuthToken>(`${this.BASE_URL}/register/`, {
+      username,
+      email,
+      password,
+    });
   }
 }

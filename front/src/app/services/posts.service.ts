@@ -27,4 +27,8 @@ export class PostsService {
   addPost(data: object): Observable<Post> {
     return this.http.post<Post>(`${this.BASE_URL}/posts/`, data);
   }
+
+  updatePost(post: Post): Observable<Post> {
+    return this.http.put<Post>(`${this.BASE_URL}/posts/${post.id}`, post);
+  }
 }

@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 20px 20px 20px 40px;
 }
 
 .square:hover {
@@ -12,57 +12,46 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-ul {
-  list-style-type: none;
-}
-
-
 .square {
   margin-bottom: 50px;
-  width: 650px;
-  height: 250px;
+  width: 500px;
+  height: 300px;
+  margin-top: 40px;
   background: #deeadc;
   border-radius: 5px;
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  box-shadow: 0px 20px 50px #d8e0cf;
+  box-shadow: 0 20px 50px #d8e0cf;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
-
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 30px;
 }
 
-.main-name {
+.header {
   text-align: left;
-  padding: 20px 0px 0px 30px;
   font-size: 28px;
 }
 
-p {
+.post-text {
   text-align: justify;
-  padding-left: 30px;
-  padding-right: 30px;
   font-size: 15px;
   color: #939393;
   line-height: 18px;
-}
-
-span {
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
   box-sizing: content-box;
-  width: 650px;
+  width: 90%;
   height: 108px;
   display: flex;
 }
 
-
 .button {
-  position: absolute;
-  bottom: 30px;
   background-color: #1BC977;
   color: white;
   width: 100px;
@@ -71,8 +60,6 @@ span {
   text-align: center;
   text-decoration: none;
   display: block;
-  margin-left: 30px;
   font-size: 14px;
   cursor: pointer;
 }
-

@@ -1,7 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {posts} from "../posts";
-import {ActivatedRoute} from "@angular/router";
-import {PostsService} from "../services/posts.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {Post} from '../models/post';
 
 @Component({
   selector: 'app-post',
@@ -9,14 +7,12 @@ import {PostsService} from "../services/posts.service";
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  topic: any;
-  posts = posts;
-  constructor(private route: ActivatedRoute, private postsService: PostsService) {
+  @Input() post: Post;
+
+  constructor() {
   }
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const topicIDFromRoute = Number(routeParams.get('id'));
-    // this.topic = topics.find(topic => topic.id === topicIDFromRoute);
   }
+
 }

@@ -1,26 +1,32 @@
-<div class="main">
-  <div *ngIf="post" class="content">
-    <h1>{{post.topic}}</h1>
-    <h2>{{post.header}}</h2>
+<div class="main" *ngIf="post">
+  <div class="content">
+    <h1>{{post.topic.theme}}</h1>
+    <h2 class="post-header">{{post.header}}</h2>
   </div>
   <div class="profile-main">
 
     <header>
       <img src="assets/profile.svg">
-      <h3>{{post.author}}</h3>
+      <h3>{{post.author.username}}</h3>
     </header>
 
     <p class="text">{{post.text}}</p>
 
     <div class="like">
-      <p class="date">Posted: {{post.date}}</p>
-      <button (click)="like(post)" class="btn-like">
+      <p class="date">Posted on: {{post.date | date:'dd/MM/yyyy HH:MM:ss'}}</p>
+      <button (click)="like()" class="btn-like">
         <span class="material-icons-outlined">favorite</span>&nbsp;<span>{{post.likes}}</span>
       </button>
     </div>
   </div>
-
+  <h2 class="comment">Comments</h2>
 </div>
 
-<h2 class="comment">Comments</h2>
-<app-comment></app-comment>
+<div *ngFor="let comment of comments">
+  <app-comment (destroy)="destroy($event)" [comment]="comment"></app-comment>
+</div>
+
+<div class="new-comment">
+  <textarea rows=3 placeholder="Leave a comment" [(ngModel)]="newComment"></textarea>
+  <button (click)="sendComment()"><span class="material-icons-outlined">send</span></button>
+</div>
