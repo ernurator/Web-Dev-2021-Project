@@ -6,6 +6,7 @@ import {StatisticsAPI} from '../models/statistics.api';
 @Injectable({
   providedIn: 'root'
 })
+
 export class StatisticsService {
   BASE_URL = 'http://127.0.0.1:8000/api/forum-statistics';
 
