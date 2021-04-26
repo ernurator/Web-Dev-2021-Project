@@ -9,7 +9,6 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TopicComponent } from './topic/topic.component';
-import {CommentComponent} from './comment/comment.component';
 
 const routes: Routes = [
   { path: 'create-post', component: CreatePostComponent},
@@ -18,9 +17,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegistrationComponent},
   { path: 'profile', component: ProfileComponent},
-  { path: 'topics/:id', component: TopicComponent}, // Topic name and this topic's posts (Topic and Post components)
+  { path: 'topics/:id', component: TopicComponent},
   { path: 'topics/:id/new-post', component: CreatePostComponent},
-  { path: 'posts/:id', component: PostDetailComponent}, // PostDetail and Comments
+  { path: 'posts/:id', component: PostDetailComponent},
   // ! { path: 'recent-posts', component: NewPostsComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }

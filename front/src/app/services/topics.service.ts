@@ -7,16 +7,16 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class TopicsService {
-  BASE_URL = 'http://127.0.0.1:8000/api/topics';
+  BASE_URL = 'http://127.0.0.1:8000/api';
 
   constructor(private http: HttpClient) {
   }
 
   getTopics(): Observable<Topic[]> {
-    return this.http.get<Topic[]>(`${this.BASE_URL}/`);
+    return this.http.get<Topic[]>(`${this.BASE_URL}/topics/`);
   }
 
   getTopic(id: number): Observable<Topic> {
-    return this.http.get<Topic>(`${this.BASE_URL}/${id}/`);
+    return this.http.get<Topic>(`${this.BASE_URL}/topics/${id}/`);
   }
 }

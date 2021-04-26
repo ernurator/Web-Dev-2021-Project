@@ -8,12 +8,12 @@ import {StatisticsAPI} from '../models/statistics.api';
 })
 
 export class StatisticsService {
-  BASE_URL = 'http://127.0.0.1:8000/api/forum-statistics';
+  BASE_URL = 'http://127.0.0.1:8000/api';
 
   constructor(private http: HttpClient) {
   }
 
   getStatistics(): Observable<StatisticsAPI> {
-    return this.http.get<StatisticsAPI>(`${this.BASE_URL}/`);
+    return this.http.get<StatisticsAPI>(`${this.BASE_URL}/forum-statistics/`);
   }
 }
