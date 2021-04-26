@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Topic} from '../models/topic';
 import {TopicsService} from '../services/topics.service';
 import {PostsService} from '../services/posts.service';
-import {topics} from '../topics';
 import {LogService} from '../services/log.service';
+import {topics} from '../topics';
 
 @Component({
   selector: 'app-create-post',
