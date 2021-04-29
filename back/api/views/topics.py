@@ -1,23 +1,27 @@
 from rest_framework.decorators import api_view
-from ..models.post import Post
-from ..models.topic import Topic
-from ..models.comment import Comment
-from ..serializers.serializer import PostSerializer, TopicSerializer
+from rest_framework import generics
+from api.models import Post
+from api.models import Topic
+from api.serializers import PostSerializer, TopicSerializer
 from rest_framework.response import Response
-from rest_framework.request import Request
+
+
+class TopicDetailAPIView(generics.RetrieveAPIView):
+    queryset = Topic.objects.all()
+    serializer_class = TopicSerializer
+
 
 @api_view(['GET'])
-def topicList(request):
+def topic_list(request):
     if request.method == "GET":
         topics = Topic.objects.all()
         serializer = TopicSerializer(topics, many=True)
         return Response(serializer.data)
 
+
 @api_view(['GET'])
-def topicPosts(request, topic_id):
+def topic_posts(request, topic_id):
     if request.method == "GET":
         posts = Post.objects.filter(topic=topic_id)
         serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
-
-

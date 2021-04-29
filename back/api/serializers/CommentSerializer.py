@@ -1,7 +1,9 @@
-from rest_framework import serializers
-from api.models import Comment
-import PostSerializer, UserSerializer
 from django.utils.timezone import now
+from rest_framework import serializers
+
+from api.models import Comment
+from api.serializers import UserSerializer, PostSerializer
+
 
 class CommentSerializer(serializers.Serializer):
     text = serializers.CharField()
