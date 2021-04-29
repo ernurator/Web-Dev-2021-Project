@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from api.models import Post
-import TopicSerializer, UserSerializer
+from .TopicSerializer import TopicSerializer
+from .UserSerializer import UserSerializer
 from django.utils.timezone import now
 
 
@@ -11,6 +12,7 @@ class PostSerializer(serializers.ModelSerializer):
     topics = TopicSerializer(read_only=True)
     author_id = serializers.IntegerField(write_only=True)
     topic_id = serializers.IntegerField(write_only=True)
+
     class Meta:
         model = Post
         fields = '__all__'
