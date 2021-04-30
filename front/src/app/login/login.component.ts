@@ -17,6 +17,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.checkUser();
+  }
+
+  checkUser(): void {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.route.navigate(['/home']);
+    }
   }
 
   login(): void{
@@ -31,7 +39,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', data.token);
       this.username = '';
       this.password = '';
-      this.route.navigate(['/home']);
+      location.reload();
     }, error => {
       this.logService.error(error);
       window.alert('Invalid credentials!');
