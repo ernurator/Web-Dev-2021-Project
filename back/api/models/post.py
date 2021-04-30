@@ -13,5 +13,5 @@ class Post(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='posts')
 
     def __str__(self):
-        short_header = self.header[:20] + '...' if len(self.header) > 20 else ''
-        return f'{short_header} post in thread {str(self.topic)} from {str(self.author)}'
+        short_header = self.header[:20] + ('...' if len(self.header) > 20 else '')
+        return f'\"{short_header}\" post in thread {str(self.topic)} from {str(self.author)}'

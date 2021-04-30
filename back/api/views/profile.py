@@ -3,17 +3,18 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 
-from api.serializers import UserSerializer
+from api.serializers import UserSerializer, UserUpdatingSerializer
 
 
 class ProfileDetailAPIView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, request):
-        return Response(request.user)
+        serializer = UserSerializer(request.user)
+        return Response(serializer.data)
 
     def put(self, request):
-        serializer = UserSerializer(instance=request.user, data=request.data)
+        serializer = UserUpdatingSerializer(instance=request.user, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

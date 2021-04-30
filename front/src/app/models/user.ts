@@ -1,6 +1,7 @@
 export interface User {
-  // TODO check existence of id in django User model
   id: number;
   username: string;
-  bio: string;
+  first_name: string;
+  last_name: string;
+  email: string;
 }

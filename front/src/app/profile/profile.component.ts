@@ -11,13 +11,11 @@ import {Router} from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   errorMessage = '';
-  user: User = {
-    username: 'User user',
-    bio: 'some bio',
-    id: 1,
-  };
+  user: User;
 
-  constructor(private usersService: UsersService, private logService: LogService, private route: Router) {
+  constructor(private usersService: UsersService,
+              private logService: LogService,
+              private route: Router) {
   }
 
   ngOnInit(): void {
@@ -43,7 +41,7 @@ export class ProfileComponent implements OnInit {
       this.user = user;
     }, error => {
       this.getUser();
-      this.errorMessage = error.message;
+      this.errorMessage = error.message + (error.error ? ` (${JSON.stringify(error.error)})` : '');
       this.logService.error(error);
     });
   }

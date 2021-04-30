@@ -5,8 +5,8 @@ import {ActivatedRoute} from '@angular/router';
 import {PostsService} from '../services/posts.service';
 import {TopicsService} from '../services/topics.service';
 import {LogService} from '../services/log.service';
-import {posts} from '../posts';
-import {topics} from '../topics';
+// import {posts} from '../posts';
+// import {topics} from '../topics';
 
 @Component({
   selector: 'app-topic',
@@ -22,8 +22,7 @@ export class TopicComponent implements OnInit {
     private postsService: PostsService,
     private topicsService: TopicsService,
     private logService: LogService) {
-    this.posts = posts;
-    this.topic = topics[0];
+    this.posts = [];
   }
 
   ngOnInit(): void {

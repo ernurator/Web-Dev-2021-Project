@@ -8,17 +8,27 @@
 
   <form *ngIf="user" class="profile-info">
     <fieldset>
-      <label>Username:</label>
-      <input name="username" type="text" placeholder="Enter new username here" [(ngModel)]="user.username">
+      <label>Firstname:</label>
+      <input name="firstname" type="text" placeholder="Enter new firstname here" [(ngModel)]="user.first_name">
     </fieldset>
 
     <fieldset>
-      <label>Bio:</label>
-      <textarea name="bio" placeholder="Enter your bio here" [(ngModel)]="user.bio"></textarea>
+      <label>Lastname:</label>
+      <input name="lastname" type="text" placeholder="Enter new lastname here" [(ngModel)]="user.last_name">
     </fieldset>
 
+    <fieldset>
+      <label>Email:</label>
+      <input name="email" type="text" placeholder="Enter new email here" [(ngModel)]="user.email">
+    </fieldset>
+
+<!--    <fieldset>-->
+<!--      <label>Bio:</label>-->
+<!--      <textarea name="bio" placeholder="Enter your bio here" [(ngModel)]="user.bio"></textarea>-->
+<!--    </fieldset>-->
+
     <div class="form-buttons">
-      <button class="cancel" type="reset">Cancel editing</button>
+      <button class="cancel" (click)="getUser()">Cancel editing</button>
       <button class="submit" (click)="updateUser()">Save</button>
     </div>
   </form>

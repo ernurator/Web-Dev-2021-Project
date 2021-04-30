@@ -12,7 +12,9 @@ export const posts: Post[] = [
       {
         id: 1,
         username: 'asd',
-        bio: 'asdasdasd',
+        first_name: 'asdasdasd',
+        last_name: 'LASTNAME',
+        email: 'asd@asd.as'
       },
     topic:
       {
@@ -37,7 +39,9 @@ export const posts: Post[] = [
       {
         id: 1,
         username: 'aswqewed',
-        bio: 'asdasdasd',
+        first_name: 'asdasdasd',
+        last_name: 'LASTNAME',
+        email: 'asd@asd.as'
       },
     topic:
       {
@@ -56,7 +60,9 @@ export const posts: Post[] = [
       {
         id: 1,
         username: 'weweasd',
-        bio: 'asdasdasd',
+        first_name: 'asdasdasd',
+        last_name: 'LASTNAME',
+        email: 'asd@asd.as'
       },
     topic:
       {

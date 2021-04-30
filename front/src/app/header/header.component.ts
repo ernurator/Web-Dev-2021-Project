@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit {
   }
 
   loadUser(): void {
-    const TOKEN = localStorage.getItem('token');
-    if (TOKEN) {
+    const token = localStorage.getItem('token');
+    if (token) {
       this.logged = true;
     }
   }

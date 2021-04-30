@@ -3,7 +3,10 @@ import {Topic} from '../models/topic';
 import {TopicsService} from '../services/topics.service';
 import {PostsService} from '../services/posts.service';
 import {LogService} from '../services/log.service';
-import {topics} from '../topics';
+import {Router} from '@angular/router';
+// import {User} from '../models/user';
+// import {UsersService} from '../services/users.service';
+// import {topics} from '../topics';
 
 @Component({
   selector: 'app-create-post',
@@ -20,8 +23,9 @@ export class CreatePostComponent implements OnInit {
 
   constructor(private topicsService: TopicsService,
               private postsService: PostsService,
-              private logService: LogService) {
-    this.topics = topics;
+              private logService: LogService,
+              private route: Router) {
+    this.topics = [];
   }
 
   ngOnInit(): void {
@@ -42,20 +46,23 @@ export class CreatePostComponent implements OnInit {
       return;
     }
 
+    // TODO add post-creation interface
     const data = {
       header: this.title,
       text: this.postText,
-      // author: , TODO add authorization
-      topic: this.selectedTopic,
+      topic_id: this.selectedTopic.id,
     };
     this.postsService.addPost(data).subscribe(post => {
       this.message = `Post was created with id ${post.id}!`;
       this.title = '';
       this.postText = '';
       this.selectedTopic = undefined;
+      setTimeout(() => {
+        this.route.navigate(['/', 'posts', post.id]);
+      }, 1000);
     }, error => {
       this.logService.error(error);
-      this.message = 'Some error has happened!';
+      this.message = error.message + (error.error ? ` (${JSON.stringify(error.error)})` : '');
     });
   }
 }

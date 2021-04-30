@@ -5,8 +5,8 @@ import {CommentsService} from '../services/comments.service';
 import {Post} from '../models/post';
 import {Comment} from '../models/comment';
 import {LogService} from '../services/log.service';
-import {posts} from '../posts';
-import {comments} from '../comments';
+// import {posts} from '../posts';
+// import {comments} from '../comments';
 
 @Component({
   selector: 'app-post-detail',
@@ -14,7 +14,7 @@ import {comments} from '../comments';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
-  post: Post = posts[0];
+  post: Post;
   comments: Comment[];
   newComment = '';
 
@@ -22,7 +22,7 @@ export class PostDetailComponent implements OnInit {
               private postsService: PostsService,
               private commentService: CommentsService,
               private logService: LogService) {
-    this.comments = comments;
+    this.comments = [];
   }
 
   like(): void {
@@ -66,9 +66,8 @@ export class PostDetailComponent implements OnInit {
       return;
     }
     const comment = {
-      post: this.post,
+      // TODO add comment creation interface
       text: this.newComment,
-      // author: , TODO add user adding
     };
     this.commentService.addComment(this.post.id, comment).subscribe(data => {
       this.comments.push(data);

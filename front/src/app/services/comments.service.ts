@@ -21,10 +21,10 @@ export class CommentsService {
   }
 
   updateComment(comment: Comment): Observable<Comment> {
-    return this.http.put<Comment>(`${this.BASE_URL}/comments/${comment.id}`, comment);
+    return this.http.put<Comment>(`${this.BASE_URL}/comments/${comment.id}/`, comment);
   }
 
   deleteComment(id: number): Observable<any> {
-    return this.http.delete(`${this.BASE_URL}/comments/${id}`);
+    return this.http.delete(`${this.BASE_URL}/comments/${id}/`);
   }
 }

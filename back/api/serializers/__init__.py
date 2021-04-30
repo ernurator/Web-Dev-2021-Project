@@ -1,4 +1,4 @@
-from .CommentSerializer import CommentSerializer
-from .PostSerializer import PostSerializer
-from .TopicSerializer import TopicSerializer
-from .UserSerializer import UserSerializer
+from .comment import CommentSerializer, CommentUpdatingSerializer
+from .post import PostSerializer, PostUpdatingSerializer
+from .topic import TopicSerializer
+from .user import UserSerializer, UserUpdatingSerializer

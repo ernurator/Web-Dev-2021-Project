@@ -1,7 +1,7 @@
 <div class="header">
   <span class="material-icons-outlined">bar_chart</span>&nbsp;Forum statistics
 </div>
-<ng-template *ngIf="statistics">
+<ng-template [ngIf]="statistics">
   <div class="row">
     <span class="label">Topics:</span>
     <span>{{statistics.topicsNumber}}</span>

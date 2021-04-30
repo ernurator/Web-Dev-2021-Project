@@ -9,11 +9,16 @@ import {Router} from '@angular/router';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  username = '';
+  first_name = '';
+  last_name = '';
   email = '';
   password = '';
-  username = '';
 
-  constructor(private usersService: UsersService, private logService: LogService, private route: Router) { }
+  constructor(private usersService: UsersService,
+              private logService: LogService,
+              private route: Router) {
+  }
 
   ngOnInit(): void {
   }
@@ -27,16 +32,20 @@ export class RegistrationComponent implements OnInit {
       return;
     }
 
-    this.usersService.register(this.username, this.password, this.email).subscribe((data) => {
-      localStorage.setItem('token', data.token);
-      this.username = '';
-      this.password = '';
-      this.email = '';
-      this.route.navigate(['/home']);
-    }, error => {
-      this.logService.error(error);
-      window.alert('Registration wasn\'t accomplished, please register again!');
-    });
+    this.usersService.register(this.username, this.first_name, this.last_name,
+      this.password, this.email)
+      .subscribe((data) => {
+        localStorage.setItem('token', data.token);
+        this.username = '';
+        this.email = '';
+        this.last_name = '';
+        this.first_name = '';
+        this.password = '';
+        this.route.navigate(['/home']);
+      }, error => {
+        this.logService.error(error);
+        window.alert('Registration wasn\'t accomplished, please register again!');
+      });
   }
 
 }

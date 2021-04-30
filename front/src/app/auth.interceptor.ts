@@ -6,7 +6,6 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // TODO add implementation (JWT auth)
     const TOKEN = localStorage.getItem('token');
     if (TOKEN) {
       const newReq = req.clone({

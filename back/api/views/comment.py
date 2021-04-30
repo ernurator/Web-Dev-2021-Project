@@ -5,19 +5,14 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from api.models import Comment
-from api.serializers import CommentSerializer
+from api.serializers import CommentUpdatingSerializer
 
 
-class CommentDetailAPIView(mixins.UpdateModelMixin,
-                           mixins.DestroyModelMixin,
-                           generics.GenericAPIView):
+class CommentDetailAPIView(mixins.DestroyModelMixin,
+                           generics.UpdateAPIView):
     queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
-    lookup_field = 'comment_id'
+    serializer_class = CommentUpdatingSerializer
     permission_classes = (IsAuthenticated,)
-
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
 
     def delete(self, request, *args, **kwargs):
         if request.user != self.get_object().author:
