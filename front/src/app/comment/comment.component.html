@@ -1,14 +1,18 @@
 <div class="content">
-  <header>
-    <p class="author">{{comment.author.username}}</p>
-    <p class="date">{{comment.date | date:'dd/MM/yyyy HH:MM:ss'}}</p>
-  </header>
-  <div class="text">
-    <h3>{{comment.text}}</h3>
+  <div class="flex">
+    <header>
+      <p class="author">{{comment.author.username}}</p>
+      <p class="date">{{comment.date | date:'dd/MM/yyyy HH:mm:ss'}}</p>
+    </header>
+    <div class="text">
+      <h3 *ngFor="let text of comment.text.split('\n')">{{text}}</h3>
+    </div>
   </div>
-  <span (click)="delete()" class="material-icons-outlined btn">delete</span>
-  &nbsp;
-  <span (click)="like()" class="material-icons-outlined btn">thumb_up</span>
-  &nbsp;
-  <span class="likes-counter">{{comment.likes}}</span>
+  <div class="flex">
+    <span (click)="delete()" class="material-icons-outlined btn">delete</span>
+    &nbsp;
+    <span (click)="like()" class="material-icons-outlined btn">thumb_up</span>
+    &nbsp;
+    <span class="likes-counter">{{comment.likes}}</span>
+  </div>
 </div>

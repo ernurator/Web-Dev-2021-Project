@@ -4,16 +4,19 @@
     <h2 class="post-header">{{post.header}}</h2>
   </div>
   <div class="profile-main">
+    <div class="flex">
+      <header>
+        <img src="assets/profile.svg" alt="Profile photo">
+        <h3>{{post.author.username}}</h3>
+      </header>
 
-    <header>
-      <img src="assets/profile.svg">
-      <h3>{{post.author.username}}</h3>
-    </header>
-
-    <p class="text">{{post.text}}</p>
+      <div>
+        <p *ngFor="let text of post.text.split('\n')" class="text">{{text}}</p>
+      </div>
+    </div>
 
     <div class="like">
-      <p class="date">Posted on: {{post.date | date:'dd/MM/yyyy HH:MM:ss'}}</p>
+      <p class="date">Posted on: {{post.date | date:'dd/MM/yyyy HH:mm:ss'}}</p>
       <button (click)="like()" class="btn-like">
         <span class="material-icons-outlined">favorite</span>&nbsp;<span>{{post.likes}}</span>
       </button>

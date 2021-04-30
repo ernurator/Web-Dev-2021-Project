@@ -15,7 +15,12 @@
   margin: auto;
   padding: 20px;
   display: flex;
+  justify-content: space-between;
   background-color: white;
+}
+
+.flex {
+  display: flex;
 }
 
 header {
@@ -88,12 +93,13 @@ h3 {
 }
 
 .text {
-  padding: 20px 30px;
+  padding: 0 30px;
   margin-left: 30px;
 }
 
 .like {
   display: flex;
+  justify-self: end;
   flex-direction: column;
   padding: 10px 20px;
 }
