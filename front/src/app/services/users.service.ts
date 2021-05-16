@@ -28,14 +28,14 @@ export class UsersService {
     });
   }
 
-  register(username: string, firstname: string, lastname: string,
+  register(username: string, firstName: string, lastName: string,
            password: string, email: string): Observable<AuthToken> {
     return this.http.post<AuthToken>(`${this.BASE_URL}/register/`, {
       username,
       email,
       password,
-      first_name: firstname,
-      last_name: lastname,
+      first_name: firstName,
+      last_name: lastName,
     });
   }
 }
